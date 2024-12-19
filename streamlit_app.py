@@ -425,7 +425,6 @@ def main():
             del st.session_state.text
             del st.session_state.retriever
             del st.session_state.workflow
-            del st.session_state.uploaded_files
         
         else:
             st.write('Please press add files if you only want these many files.')
