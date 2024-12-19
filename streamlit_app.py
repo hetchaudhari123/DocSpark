@@ -402,10 +402,39 @@ def chatbot():
     )
 
 
+# Function to store API keys securely
+def store_keys():
+    # Ask for the API keys using text_input
+    groq_api_key = st.text_input("Enter GROQ API Key", type="password")
+    google_api_key = st.text_input("Enter Google API Key", type="password")
+
+    # Store the keys in session state and set environment variables individually
+    if groq_api_key:
+        st.session_state['groq_api_key'] = groq_api_key
+        # Set the environment variable for GROQ API Key
+        os.environ['GROQ_API_KEY'] = st.session_state['groq_api_key']
+        st.success("GROQ API environment variable set successfully!")
+
+    if google_api_key:
+        st.session_state['google_api_key'] = google_api_key
+        # Set the environment variable for Google API Key
+        os.environ['GOOGLE_API_KEY'] = st.session_state['google_api_key']
+        st.success("Google API environment variable set successfully!")
+
+
+
+def api_key():
+    st.write("""Please provide your own API keys to ensure uninterrupted service. If you choose not to, the system's default API keys will be used, which may be subject to limitations and could become exhausted at any time.""")
+    store_keys()
+
+
 
 def main():
+
     st.title('DocSpark')
-    option = st.sidebar.radio("Choose a section:", ["Library", "Teacher", "IIICell","General_Bot"])
+    
+    # Run the function
+    option = st.sidebar.radio("Choose a section:", ["Api Key","Library", "Teacher", "IIICell","General Bot"])
 
     # Initialize session state if not already set
     if "uploaded_files" not in st.session_state:
@@ -452,8 +481,10 @@ def main():
         teacher_main()
     elif option == "IIICell":
         iiicell_main()
-    elif option == "General_Bot":
+    elif option == "General Bot":
         chatbot()
+    elif option == "Api Key":
+        api_key()
 
 # Run the Streamlit app
 if __name__ == "__main__":
