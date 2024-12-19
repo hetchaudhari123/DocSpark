@@ -94,8 +94,7 @@ class LLMSingleton:
     def get_instance(cls):
         if cls._instance is None:
             # cls._instance = ChatGroq(model_name="llama-3.3-70b-versatile")
-            cls._instance = ChatGroq(model_name="llama-3.2-90b-text-preview")
-            # cls._instance = ChatGoogleGenerativeAI(model="gemini-1.5-pro")
+            cls._instance = ChatGoogleGenerativeAI(model="gemini-1.5-pro")
         return cls._instance
     
 class GeminiSingleton:
