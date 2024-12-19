@@ -475,7 +475,8 @@ def llm_extract_components():
 
     Output Expected:
     score:[Score1, Score2, Score3]
-    Please Make sure that the score is list of integers otherwise error will occur. So make sure score is a list of integers
+    Please Make sure that the score is list of integers otherwise error will occur. So make sure score is a list of integers.
+    Make sure that you extract the score properly without missing any score, there would be in total 5 scores in the text.
     """
 
     # Initialize the LLM and set the output structure
