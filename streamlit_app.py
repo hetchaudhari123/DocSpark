@@ -421,7 +421,15 @@ def main():
     # Compare and sync uploaded files (to handle the "X" cross behavior)
     if uploaded_files != st.session_state.uploaded_files:
         st.session_state.uploaded_files = uploaded_files
-        st.write('Please press add files if you only want these many files.')
+        if len(st.session_state.uploaded_files) == 0:
+            del st.session_state.text
+            del st.session_state.retriever
+            del st.session_state.workflow
+            del st.session_state.uploaded_files
+        
+        else:
+            st.write('Please press add files if you only want these many files.')
+
         # handle_file_upload(st.session_state.uploaded_files)
 
     # Display uploaded files
