@@ -180,17 +180,17 @@ def teacher_main():
 
 
     # Function to generate the exam
-    def exam_generator():
+    def exam_generator(num_questions):
         if "text" in st.session_state:  # Check if material (text) exists in session state
             try:
                 questions_list,marks_list = tb.question_paper_generator(
                     st.session_state.retriever, 
                     text=st.session_state.text, 
-                    questions=5 #give option to the user for selecting number of questions.
+                    questions=num_questions #give option to the user for selecting number of questions.
                 )
 
-                st.session_state.questions_list = questions_list[:5]
-                st.session_state.marks_list = marks_list[:5]
+                st.session_state.questions_list = questions_list[:num_questions]
+                st.session_state.marks_list = marks_list[:num_questions]
                 
                 # For TESTING!!!!!!!!!!!!!!!
 #                 st.session_state.questions_list = ['What are the key stages involved in full stack development and how do they '
@@ -264,9 +264,11 @@ def teacher_main():
                 if new_answer and new_answer not in st.session_state.answer_sheet[i-1]:
                     st.session_state.answer_sheet[i-1].append(new_answer)        
 
+    
+    # num_questions = st.radio("Select the number of questions", [5, 10], index=0)
     # Button to trigger the exam generation
     if st.button("Exam Generator"):
-        exam_generator()
+        exam_generator(5)
 
     display_generated_questions()
 

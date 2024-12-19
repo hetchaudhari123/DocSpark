@@ -76,7 +76,7 @@ os.environ["ASSEMBLY_AI_KEY"]=os.getenv('ASSEMBLY_AI_KEY')
 aai.settings.api_key = os.getenv("ASSEMBLY_AI_KEY")
 
 
-GROQ_API_KEY=os.getenv('groq_api_key')
+GROQ_API_KEY=os.getenv('GROQ_API_KEY')
 os.environ['GROQ_API_KEY']=GROQ_API_KEY
 
 
