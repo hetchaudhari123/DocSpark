@@ -391,7 +391,7 @@ def chatbot():
         elif msg["role"] == "bot":
             st.markdown(f"**Bot:** {msg['content']}")
         else:
-            st.markdown(f"**System:** {msg['content']}")
+            st.markdown(f"**Bot:** {msg['content']}")
 
     # Text input for user message
     st.text_input(
@@ -421,6 +421,7 @@ def main():
     # Compare and sync uploaded files (to handle the "X" cross behavior)
     if uploaded_files != st.session_state.uploaded_files:
         st.session_state.uploaded_files = uploaded_files
+        handle_file_upload(st.session_state.uploaded_files)
 
     # Display uploaded files
     if st.session_state.uploaded_files:
