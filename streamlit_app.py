@@ -225,7 +225,7 @@ def teacher_main():
                 st.error(f"An error occurred while generating the exam: {e}")
         else:
             # Show error if no text material is provided
-            st.session_state.error_message = "Please provide the material!"
+            st.session_state.error_message = "Please provide the material and then press 'Add Files'!"
             st.error(st.session_state.error_message)
 
 
