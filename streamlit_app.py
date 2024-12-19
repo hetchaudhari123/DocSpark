@@ -164,7 +164,7 @@ def teacher_main():
         # result = tb.evaluate_answers(st.session_state.questions_list, st.session_state.answer_sheet, st.session_state.marks_list, st.session_state.text)
         result = tb.report_generator_using_llm(st.session_state.retriever,st.session_state.questions_list,st.session_state.answer_sheet,st.session_state.marks_list,st.session_state.text)
         # print(result)
-
+        st.write("# Report")
         # st.write(result)
         st.text(result)
         
