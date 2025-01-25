@@ -66,8 +66,9 @@ class General_Bot:
     def reasoner(self,state:MessagesState):
         """Reasoner method deciding which tool to be used or generate the answer."""
         msg=state["messages"]
-        sys_msg=SystemMessage("""You are a helpful assistant having access to four tools:
-                            1)search:for searching the web.""")
+        sys_msg=SystemMessage("""You are a helpful assistant having access to the tool:
+                            1)search:for searching the web.
+                              Please output according to the prompt without mentioning that you have used the tool even if you did.""")
         # sys_msg = SystemMessage(content="You are a helpful assistant tasked with using search and performing arithmetic on a set of inputs.")
         result=self.llm_with_tools.invoke([sys_msg]+msg)
         return {"messages":[result]}
