@@ -522,7 +522,13 @@ class Chatbot:
 
 
 
-    web_results = "\n".join([d["content"] for d in docs])
+    web_results = "\n".join([
+    d["content"] for d in docs
+    if isinstance(d, dict) and "content" in d
+])
+
+
+
 
     result = self.llm.invoke(question)
 
