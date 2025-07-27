@@ -767,9 +767,10 @@ if __name__ == "__main__":
     text_splitter=RecursiveCharacterTextSplitter(chunk_size=1000,chunk_overlap=200)
     documents=text_splitter.split_documents(docs)
     # embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", **{
-    "transport": "rest"  # This disables gRPC and uses REST
-})
+    embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/embedding-001",
+    transport="rest"          # ← this forces the sync/REST client
+)
 
     db = Chroma.from_documents(documents,embeddings)
     retriever=db.as_retriever()

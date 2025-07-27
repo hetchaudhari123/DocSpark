@@ -180,9 +180,10 @@ def store_text_in_vector_db(text):
     # Initialize HuggingFaceEmbeddings model for text embedding
     # embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
     # embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", **{
-    "transport": "rest"  # This disables gRPC and uses REST
-})
+    embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/embedding-001",
+    transport="rest"          # ← this forces the sync/REST client
+)
 
 
     # Create a Chroma vector store from the documents and embeddings
