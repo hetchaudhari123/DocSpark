@@ -766,9 +766,9 @@ if __name__ == "__main__":
     docs=loader.load()
     text_splitter=RecursiveCharacterTextSplitter(chunk_size=1000,chunk_overlap=200)
     documents=text_splitter.split_documents(docs)
-    # embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+    # embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001")
     embeddings = GoogleGenerativeAIEmbeddings(
-    model="models/embedding-001",
+    model="gemini-embedding-001",
     transport="rest"          # ← this forces the sync/REST client
 )
 

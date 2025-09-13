@@ -107,7 +107,8 @@ class GeminiSingleton:
     def get_instance(cls):
         if cls._instance is None:
             # cls._instance = ChatGroq(model_name="llama-3.1-8b-instant")
-            cls._instance = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
+            # cls._instance = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
+            cls._instance = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
 
         return cls._instance
     
@@ -179,9 +180,9 @@ def store_text_in_vector_db(text):
 
     # Initialize HuggingFaceEmbeddings model for text embedding
     # embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-    # embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+    # embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001")
     embeddings = GoogleGenerativeAIEmbeddings(
-    model="models/embedding-001",
+    model="gemini-embedding-001",
     transport="rest"          # ← this forces the sync/REST client
 )
 
