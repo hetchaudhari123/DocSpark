@@ -178,11 +178,10 @@ def store_text_in_vector_db(text):
     # Split the document into smaller chunks
     documents = text_splitter.split_documents(docs)
 
-    # Initialize HuggingFaceEmbeddings model for text embedding
-    # embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-    # embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001")
+    
     embeddings = GoogleGenerativeAIEmbeddings(
-    model="gemini-embedding-001",
+    # model="models/embedding-001",
+    model="models/text-embedding-004",
     transport="rest"          # ← this forces the sync/REST client
 )
 
