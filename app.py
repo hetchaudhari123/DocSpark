@@ -2,7 +2,7 @@ from typing import Annotated, Literal, TypedDict
 import os
 import PyPDF2
 import assemblyai as aai
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_google_genai import ChatGoogleGenerativeAI
