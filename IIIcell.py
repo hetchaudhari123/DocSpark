@@ -1,38 +1,16 @@
 from jobspy import scrape_jobs
-import pandas as pd
-from pprint import pprint
 from langgraph.prebuilt import ToolNode
-from langchain_core.tools import tool
 from langgraph.graph import StateGraph,MessagesState, START, END
-import PyPDF2
 import assemblyai as aai
-
 from typing import List
-
-
 import os
-import sys
 from langchain_community.tools.tavily_search import TavilySearchResults
-from langchain_groq import ChatGroq
-from typing import Annotated, Literal, TypedDict
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import StrOutputParser
 from pydantic import BaseModel, Field
-
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from langchain_google_genai import ChatGoogleGenerativeAI
-
 from langchain_community.utilities import GoogleSerperAPIWrapper
-
-
-
-from langchain_community.tools import DuckDuckGoSearchRun
-
 from dotenv import load_dotenv
-
 import re
 import json
-
 import Library as lb
 
 load_dotenv()

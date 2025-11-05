@@ -1,24 +1,17 @@
 import os
-from typing import Annotated, Literal, TypedDict
+from typing import TypedDict
 import os
-import PyPDF2
 import assemblyai as aai
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_groq import ChatGroq
-from langchain.schema import Document
 
 from langchain_community.document_loaders import PyPDFLoader
 
 
 from langchain_community.vectorstores import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
 
-from langchain import hub
 from langchain_core.output_parsers import StrOutputParser
-from langchain import hub
-from langchain.chains.combine_documents import create_stuff_documents_chain
 
 from langchain_core.prompts import ChatPromptTemplate
 
@@ -26,44 +19,28 @@ import random
 
 
 
-from langchain.chains import create_retrieval_chain
 
-from langchain_core.runnables import RunnablePassthrough
 
-import re
-import json
 
-from langchain_core.tools import tool
-from langchain_core.messages import HumanMessage,AIMessage,SystemMessage
-from langgraph.checkpoint.memory import MemorySaver
-from langgraph.prebuilt import ToolNode
 
-from langchain_community.tools import DuckDuckGoSearchRun
 
 from langchain_community.tools.tavily_search import TavilySearchResults
-from langgraph.prebuilt import tools_condition
-from langgraph.graph import StateGraph,MessagesState, START, END
-from IPython.display import Image, display
+from langgraph.graph import StateGraph,START, END
 
 from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel, Field
 
 
 
-from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
-import langchain_core
 from typing import List
-import langchain_community
 
-from pprint import pprint
 
 from langchain_community.tools.tavily_search import TavilySearchResults
 
 import os
 from dotenv import load_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI
 
 import Library as lb
 
