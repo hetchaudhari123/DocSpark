@@ -11,7 +11,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_groq import ChatGroq
 from langchain_core.documents import Document
 from langchain_core.output_parsers import StrOutputParser
-from langchain import hub
+from langchain.hub import hub
 from langchain_community.vectorstores import FAISS
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langgraph.graph import StateGraph, START, END
