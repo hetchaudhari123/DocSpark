@@ -10,7 +10,6 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_groq import ChatGroq
 from langchain_core.documents import Document
-from langchain import hub
 from langchain_core.output_parsers import StrOutputParser
 from langchain import hub
 from langchain_community.vectorstores import FAISS
