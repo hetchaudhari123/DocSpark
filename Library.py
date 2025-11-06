@@ -211,7 +211,7 @@ def create_retrieval_grader(GradeDocuments):
     # Define the system prompt for grading
     system = """You are a grader assessing relevance of a retrieved document to a user question. \n
     If the document contains keyword(s) or semantic meaning related to the question, grade it as relevant. \n
-    Give a binary score 'yes' or 'no' score to indicate whether the document is relevant to the question."""
+    Give a binary score 'yes' or 'no' score to indicate whether the document is relevant to the question. Make sure you give binary_score and not binary score(that is you should have underscore between the words binary and score)"""
 
     # Define the grade prompt template
     grade_prompt = ChatPromptTemplate.from_messages(
