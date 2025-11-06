@@ -158,7 +158,8 @@ def store_text_in_vector_db(text):
 
 def search_text_from_vector_db(retriever, query):
     # Perform a similarity search based on the input query
-    retrieved_results = retriever.get_relevant_documents(query)
+    # retrieved_results = retriever.get_relevant_documents(query)
+    retrieved_results = retriever.invoke(query)
 
     text_content=""
 
@@ -392,7 +393,9 @@ class Chatbot:
     retriever = self.retriever
 
     # print("here...")
-    documents = retriever.get_relevant_documents(question)
+    # documents = retriever.get_relevant_documents(question)
+
+    documents = retriever.invoke(question)
 
     return {"documents": documents, "question": question}
 
